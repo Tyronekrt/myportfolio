@@ -1,7 +1,7 @@
 # titus-ronoh-portfolio
 
 **Personal portfolio of Titus Kipkoech Ronoh** — Software Engineer &amp; AI/ML Engineer (Nairobi, Kenya).
-A modern, fast, dependency-free static site showcasing production APIs, AI/ML projects, experience and six tailored CVs.
+A modern, fast, dependency-free static site showcasing production APIs, AI/ML projects, experience and two tailored CVs.
 
 [![CI](https://github.com/Tyronekrt/titus-ronoh-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Tyronekrt/titus-ronoh-portfolio/actions/workflows/ci.yml)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
@@ -14,7 +14,7 @@ A modern, fast, dependency-free static site showcasing production APIs, AI/ML pr
 
 ## Highlights
 
-- 🎯 **Role-tailored** — SE &amp; AI CVs featured up front; six CV downloads total
+- 🎯 **Role-tailored** — SE & AI CVs featured; two CV downloads total
 - ⚡ **Zero-dependency** — hand-crafted HTML/CSS/JS, no framework, no build step
 - 📱 **Fully responsive** — mobile-first breakpoints, accessible nav &amp; focus states
 - ✨ **Modern UI** — dark glass theme, gradient accents, scroll-reveal motion, pointer glow cards
@@ -40,7 +40,7 @@ A modern, fast, dependency-free static site showcasing production APIs, AI/ML pr
 │   ├── css/style.css             # Full design system
 │   ├── js/main.js                # Interactions
 │   ├── img/                      # Profile photos, OG image, favicon
-│   └── cvs/                      # Six tailored CVs (SE & AI featured)
+│   └── cvs/                      # Two tailored CVs (SE & AI)
 ├── scripts/check_links.py        # Internal + external link checker
 ├── .github/workflows/ci.yml      # CI pipeline
 ├── render.yaml                   # Render static-site Blueprint

@@ -488,6 +488,7 @@ code {
   line-height: 1.1;
 }
 .stat__num::after { content: "+"; }
+.stat__num--exact::after { content: ""; }
 .stat__label { font-size: 0.85rem; color: var(--text-dim); }
 
 /* ==========================================================================
@@ -687,6 +688,18 @@ code {
 }
 .tl-item__card h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); letter-spacing: -0.02em; }
 .tl-item__org { color: var(--accent-2); font-size: 0.92rem; font-weight: 500; margin-top: 3px; }
+.tl-item__lead { color: var(--text-soft); font-size: 0.95rem; margin: 10px 0 14px; }
+.tl-item__lead strong { color: var(--text); font-weight: 600; }
+.inline-link {
+  color: var(--accent-2);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(34, 211, 238, 0.45);
+  text-underline-offset: 3px;
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.inline-link:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.cv__grid--duo { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
 .pill {
   font-family: var(--mono);
@@ -797,6 +810,7 @@ code {
 .project .tags { margin-bottom: 20px; }
 
 .project__links { display: flex; gap: 10px; flex-wrap: wrap; }
+.project__links--spaced { margin-top: 16px; }
 
 .projects__more { margin-top: 26px; }
 

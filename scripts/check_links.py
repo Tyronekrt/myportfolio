@@ -84,6 +84,9 @@ def check_external() -> int:
     expected_block = {
         "https://www.linkedin.com/in/titus-kipkoech-ronoh-56a6082a9",
     }
+    # Render free-tier services return 503 "Service Suspended" when paused; the
+    # URLs are valid and self-restore once resumed in the Render dashboard.
+    render_ok = (".onrender.com",)
     problems = []
     placeholders = []
     for url in urls:
@@ -116,9 +119,19 @@ def check_external() -> int:
                     code = getattr(exc2, "code", None) or str(exc2)
 
         ok = isinstance(code, int) and 200 <= code < 400
-        mark = "✔" if ok else ("⚠ (bot-blocked?) " if url in expected_block else "✘")
+        if ok:
+            mark = "✔"
+        elif url in expected_block:
+            mark = "⚠ (bot-blocked?) "
+        elif isinstance(code, int) and code == 503 and host.endswith(render_ok):
+            mark = "⚠ (Render suspended — resume in dashboard) "
+        else:
+            mark = "✘"
         print(f"  {mark} {code}  {host}{urlparse(url).path[:60]}")
-        if not ok and url not in expected_block:
+        is_render_suspended = (
+            isinstance(code, int) and code == 503 and host.endswith(render_ok)
+        )
+        if not ok and url not in expected_block and not is_render_suspended:
             problems.append((url, code))
 
     if problems:
