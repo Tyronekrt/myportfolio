@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  validate:
+    name: Validate site
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: HTML validation
+        run: npx --yes html-validate@9 "index.html"
+
+      - name: Internal link & asset check
+        run: python3 scripts/check_links.py
+
+      - name: Render smoke test (serve + fetch)
+        run: |
+          python3 -m http.server 8080 --directory . &
+          SERVER_PID=$!
+          sleep 2
+          curl --fail --silent --show-error http://127.0.0.1:8080/ > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8080/assets/css/style.css > /dev/null
+          curl --fail --silent --show-error http://127.0.0.1:8080/assets/js/main.js > /dev/null
+          kill $SERVER_PID
+
+      - name: External link check (informational)
+        run: python3 scripts/check_links.py --external || echo "External link check reported warnings (often bot-blocking, e.g. LinkedIn)."

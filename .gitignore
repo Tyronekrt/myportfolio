@@ -1,0 +1,39 @@
+# Dependencies / build
+node_modules/
+.npm/
+.yarn/
+.pnpm/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env (never commit secrets)
+.env
+.env.*
+!.env.example
+
+# Local scratch
+tmp/
+.cache/
+dist/
+
+# Source documents at repo root — site uses optimized copies under assets/
+# (keep originals local; Render only needs the published site files)
+/*.pdf
+/*.docx
+/IMG_0961.jpg
+/PassportPhoto.jpg

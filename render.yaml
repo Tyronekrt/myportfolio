@@ -1,0 +1,12 @@
+# Render deployment — static site
+# Docs: https://render.com/docs/static-sites
+# Connect this GitHub repo in the Render dashboard → "New +" → "Static Site",
+# or use Blueprint sync which reads this file automatically.
+services:
+  - type: web
+    name: titus-ronoh-portfolio
+    runtime: static
+    plan: free
+    buildCommand: ""
+    staticPublishPath: ./
+    autoDeploy: true
