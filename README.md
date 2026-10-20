@@ -41,11 +41,12 @@ A modern, fast, dependency-free static site showcasing production APIs, AI/ML pr
 ├── assets/
 │   ├── css/style.css             # Full design system
 │   ├── js/main.js                # Interactions
-│   ├── img/                      # Profile photos, OG image, favicon
-│   └── cvs/                      # Two tailored CVs (SE & AI)
+│   └── img/                      # Profile photos, OG image, favicon
+├── files/                        # Two tailored CVs (SE & AI) - downloadable
 ├── scripts/check_links.py        # Internal + external link checker
 ├── .github/workflows/ci.yml      # CI pipeline
 ├── render.yaml                   # Render static-site Blueprint
+├── vercel.json                   # Vercel config (PDF headers)
 └── README.md
 ```
 
