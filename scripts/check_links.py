@@ -17,8 +17,8 @@ ROOT = Path(__file__).resolve().parent.parent
 HTML = ROOT / "index.html"
 SKIP_PREFIX = ("#", "mailto:", "tel:", "javascript:", "data:")
 
-# Placeholder domain before first Render deploy (update after deploying).
-PLACEHOLDER_HOSTS = {"titus-ronoh-portfolio.onrender.com"}
+# Non-live site URLs referenced in <link>/<meta> (canonical, OG) are not fetched
+# by this checker; it validates <a>, <img>, <script> and local stylesheet/icon links.
 
 
 class _LinkParser(HTMLParser):
@@ -88,13 +88,8 @@ def check_external() -> int:
     # URLs are valid and self-restore once resumed in the Render dashboard.
     render_ok = (".onrender.com",)
     problems = []
-    placeholders = []
     for url in urls:
         host = urlparse(url).netloc
-        if host in PLACEHOLDER_HOSTS:
-            placeholders.append(url)
-            print(f"  ⏳ placeholder (update after first Render deploy)  {url}")
-            continue
         try:
             req = urllib.request.Request(
                 url,
@@ -139,7 +134,7 @@ def check_external() -> int:
         for url, code in problems:
             print(f"  - {code}  {url}")
         return 1
-    print(f"\nExternal links look good ({len(placeholders)} placeholder pending deploy). ✔")
+    print("\nExternal links look good. ✔")
     return 0
 
 

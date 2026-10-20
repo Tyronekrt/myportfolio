@@ -1,14 +1,16 @@
-# titus-ronoh-portfolio
+# myportfolio
 
 **Personal portfolio of Titus Kipkoech Ronoh** — Software Engineer &amp; AI/ML Engineer (Nairobi, Kenya).
 A modern, fast, dependency-free static site showcasing production APIs, AI/ML projects, experience and two tailored CVs.
 
-[![CI](https://github.com/Tyronekrt/titus-ronoh-portfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Tyronekrt/titus-ronoh-portfolio/actions/workflows/ci.yml)
+**Live:** https://titusronoh.vercel.app/
+
+[![CI](https://github.com/Tyronekrt/myportfolio/actions/workflows/ci.yml/badge.svg)](https://github.com/Tyronekrt/myportfolio/actions/workflows/ci.yml)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 ![License](https://img.shields.io/badge/license-MIT-green)
-![Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7?style=flat&logo=render&logoColor=black)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat&logo=vercel&logoColor=white)
 
 ---
 
@@ -19,7 +21,7 @@ A modern, fast, dependency-free static site showcasing production APIs, AI/ML pr
 - 📱 **Fully responsive** — mobile-first breakpoints, accessible nav &amp; focus states
 - ✨ **Modern UI** — dark glass theme, gradient accents, scroll-reveal motion, pointer glow cards
 - 🔗 **All links verified** — automated internal-link + external-link CI checks
-- 🚀 **Render-ready** — `render.yaml` Blueprint for one-click static deployment
+- 🚀 **Deploy-anywhere** — Vercel (live) and a `render.yaml` Blueprint for Render static hosting
 
 ## Tech
 
@@ -61,23 +63,22 @@ npx serve .
 
 Open http://localhost:8080
 
-## Deploy on Render
+## Deploy
 
-### Option A — Blueprint (recommended)
+### Vercel (live)
 
-1. Push this repository to GitHub.
-2. In Render: **New + → Blueprint**, select the repo.
-3. Render reads `render.yaml` and creates the static site automatically.
-4. Your site goes live at `https://<service-name>.onrender.com`.
+1. Import this repository at [vercel.com/new](https://vercel.com/new).
+2. Framework preset: **Other**. Build command: *(empty)*. Output directory: `./`.
+3. Deploy — live at https://titusronoh.vercel.app/.
+4. Every push to `main` redeploys automatically.
 
-### Option B — Static site wizard
+### Render (alternative)
 
-1. Render: **New + → Static Site → Connect a repository**.
-2. Build command: *(leave empty)*
-3. Publish directory: `./`
-4. Deploy. Every push to `main` redeploys automatically.
+1. Render: **New + → Blueprint**, select the repo — Render reads `render.yaml` automatically.
+   *(Or: New + → Static Site, empty build command, publish directory `./`.)*
+2. Push to `main` redeploys automatically.
 
-> Update the canonical/OG URLs in `index.html` (`https://titus-ronoh-portfolio.onrender.com/`) to your final Render domain.
+> Canonical/OG URLs in `index.html` are set to `https://titusronoh.vercel.app/` — update them if you switch domains.
 
 ## Quality checks
 
