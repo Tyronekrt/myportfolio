@@ -30,10 +30,3 @@ npm-debug.log*
 tmp/
 .cache/
 dist/
-
-# Source documents at repo root — site uses optimized copies under assets/
-# (keep originals local; Render only needs the published site files)
-/*.pdf
-/*.docx
-/IMG_0961.jpg
-/PassportPhoto.jpg
